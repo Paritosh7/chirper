@@ -3,14 +3,14 @@ import { receiveTweets } from "./tweets/actions";
 import { receiveUsers } from "./users/actions";
 import { setAuthedUser } from "./authedUser/actions";
 
+/** Hardcoded authedUser */
+const AUTHED_USER = "tylermcginnis";
+
 /**
  * An action creator that returns a function,
  * the returned function will be called by thunk middleware.
  * This pattern is used for making API calls.
  */
-
-const AUTHED_USER = "tylermcginnis";
-
 export function handleInitialData() {
   return (dispatch) => {
     getInitialData().then(({ users, tweets }) => {
