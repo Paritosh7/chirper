@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import thunk from "redux-thunk";
 import authedUserReducer from "./authedUser/reducer";
 import tweetsReducer from "./tweets/reducer";
 import usersReducer from "./users/reducer";
@@ -9,9 +10,12 @@ const reducer = combineReducers({
   users: usersReducer,
 });
 
+/** To enable redux devtools */
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  /* preloadedState, */ composeEnhancers(applyMiddleware(thunk))
 );
 
 export default store;

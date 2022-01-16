@@ -7,7 +7,7 @@ import { setAuthedUser } from "./authedUser/actions";
 const AUTHED_USER = "tylermcginnis";
 
 /**
- * An action creator that returns a function,
+ * A thunk action creator that returns a function,
  * the returned function will be called by thunk middleware.
  * This pattern is used for making API calls.
  */
