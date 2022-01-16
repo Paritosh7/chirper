@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import Dashboard from "../components/Dashboard";
-import { sortTweets } from "../store/tweets/selectors";
+import { selectSortTweets } from "../store/tweets/selectors";
 
 const mapStateToProps = (state) => {
-  const tweetIds = sortTweets(state);
+  const tweetIds = selectSortTweets(state);
   return { tweetIds };
 };
 

@@ -1,6 +1,12 @@
 /** tweet from TweetContainer */
 function Tweet({ authedUser, tweet }) {
-  return <li>{tweet.name}</li>;
+  if (tweet === null) return <p>This tweet doesn't exist</p>;
+
+  return (
+    <li>
+      <article></article>
+    </li>
+  );
 }
 
 export default Tweet;
