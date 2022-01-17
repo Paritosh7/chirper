@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { DashboardContainer } from "../containers/DashboardContainer";
+import { DashboardContainer } from "../../containers/DashboardContainer";
 
 /** fetchInitialData from AppContainer */
 function App({ loading, fetchInitialData }) {

@@ -1,4 +1,4 @@
-import { TweetContainer } from "../containers/TweetContainer";
+import { TweetContainer } from "../../containers/TweetContainer";
 
 function Dashboard({ tweetIds }) {
   return (
