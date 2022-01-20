@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 /*
     Josh Comeau's styles reset
-  1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after {
   box-sizing: border-box;

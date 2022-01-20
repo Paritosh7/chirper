@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Tweet from "../components/Tweet/Tweet";
 import { selectAuthedUser } from "../store/authedUser/selectors";
+import { handleToggleTweetLike } from "../store/tweets/actions";
 import { selectFormattedTweet } from "../store/tweets/selectors";
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,4 +21,12 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export const TweetContainer = connect(mapStateToProps)(Tweet);
+const mapDispatchToProps = {
+  handleLike: (id, authedUser, hasLiked) =>
+    handleToggleTweetLike({ id, authedUser, hasLiked }),
+};
+
+export const TweetContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Tweet);

@@ -12,7 +12,7 @@ export const selectTweet = (state, id) => state.tweets[id];
 export const selectFormattedTweet = createSelector(
   [selectTweets, selectTweet, selectUsers, selectAuthedUser],
   (tweets, tweet, users, authedUser) => {
-    const tweetAuthor = users[tweet.author];
+    const tweetAuthor = tweet ? users[tweet.author] : null;
     const parentTweet = tweet ? tweets[tweet.replyingTo] : null;
 
     /** if tweet is present, return tweet, else return null */

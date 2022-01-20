@@ -1,8 +1,12 @@
+import dan from "../images/dan.png";
+import sarah from "../images/sarah.png";
+import tyler from "../images/tyler.png";
+
 let users = {
   sarah_edo: {
     id: "sarah_edo",
     name: "Sarah Drasner",
-    avatarURL: "https://tylermcginnis.com/would-you-rather/sarah.jpg",
+    avatarURL: sarah,
     tweets: [
       "8xf0y6ziyjabvozdd253nd",
       "hbsc73kzqi75rg7v1e0i6a",
@@ -14,7 +18,7 @@ let users = {
   tylermcginnis: {
     id: "tylermcginnis",
     name: "Tyler McGinnis",
-    avatarURL: "https://tylermcginnis.com/would-you-rather/tyler.jpg",
+    avatarURL: tyler,
     tweets: [
       "5c9qojr2d1738zlx09afby",
       "f4xzgapq7mu783k9t02ghx",
@@ -29,7 +33,7 @@ let users = {
   dan_abramov: {
     id: "dan_abramov",
     name: "Dan Abramov",
-    avatarURL: "https://tylermcginnis.com/would-you-rather/dan.jpg",
+    avatarURL: dan,
     tweets: [
       "5w6k1n34dkp1x29cuzn2zn",
       "czpa59mg577x1oo45cup0d",
