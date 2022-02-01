@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { DashboardContainer } from "../../containers/DashboardContainer";
+import NewTweet from "../NewTweet/NewTweet";
 
 /** fetchInitialData from AppContainer */
 function App({ loading, fetchInitialData }) {
@@ -8,9 +9,7 @@ function App({ loading, fetchInitialData }) {
   }, []);
 
   return (
-    <div className="App">
-      {loading ? <p>Loading...</p> : <DashboardContainer />}
-    </div>
+    <div className="App">{loading ? <p>Loading...</p> : <NewTweet />}</div>
   );
 }
 
