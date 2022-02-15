@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import NewTweet from "../components/NewTweet/NewTweet";
+import { selectAuthedUser } from "../store/authedUser/selectors";
 import { handleAddTweet } from "../store/tweets/actions";
 
 const mapDispatchToProps = {

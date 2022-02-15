@@ -1,4 +1,5 @@
 import { saveLikeToggle, saveTweet } from "../../utils/api";
+import { formatTweet } from "../../utils/helpers";
 
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS";
 export const TOGGLE_TWEET_LIKE = "TOGGLE_TWEET_LIKE";
@@ -22,13 +23,12 @@ export function toggleTweetLike({ id, authedUser, hasLiked }) {
   };
 }
 
-export function addNewTweet({ text, author, replyingTo }) {
+export function addNewTweet(tweet) {
+  console.log(tweet);
   return {
     type: ADD_NEW_TWEET,
     payload: {
-      text,
-      author,
-      replyingTo,
+      tweet,
     },
   };
 }
@@ -48,15 +48,16 @@ export function handleToggleTweetLike(info) {
   };
 }
 
-export function handleAddTweet(info) {
-  return (dispatch) => {
-    dispatch(addNewTweet(info));
-    return saveTweet(info)
-      .then(() => {
-        console.log("New tweet added");
+export function handleAddTweet({ text, replyingTo }) {
+  return (dispatch, getState) => {
+    const { authedUser: author } = getState();
+
+    return saveTweet({ text, author, replyingTo })
+      .then((tweet) => {
+        dispatch(addNewTweet(tweet));
       })
       .catch((err) => {
-        console.warn("New tweet couldn't be saved");
+        console.warn("New tweet couldn't be saved", err);
       });
   };
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NewTweet({ addTweet, authedUser }) {
+function NewTweet({ addTweet }) {
   const [tweetText, setTweet] = useState("");
   var tweetLength = 200 - tweetText.length;
 
@@ -10,7 +10,7 @@ function NewTweet({ addTweet, authedUser }) {
 
   function handleSubmit(eve) {
     eve.preventDefault();
-    addTweet(tweetText, authedUser, null);
+    addTweet(tweetText, null);
   }
 
   return (
